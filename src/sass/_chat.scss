@@ -1,0 +1,511 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    padding: 14px;
+    border-bottom: 1px solid var(--color-primary);
+    position: sticky;
+    top: 0;
+    right: 0;
+    background-color: var(--color-primary);
+    z-index: 1;
+    cursor: pointer;
+
+    .leftHeaderDiv {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+
+      .avatar {
+        height: 40px;
+        width: 40px;
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .name {
+          font-size: 16px;
+          font-weight: normal;
+        }
+        .text {
+          color: var(--color-text-secondary);
+          font-size: 12px;
+        }
+      }
+    }
+
+    .rightHeaderDiv {
+      display: flex;
+      gap: 5px;
+    }
+  }
+
+  .body {
+    position: relative;
+    height: 100%;
+    overflow-y: scroll;
+    background-image: url('../../public/assets/chat-bgc.png');
+    background-size: 300px;
+    background-repeat: repeat;
+
+    .styles_scrollable-div__prSCv {
+      .message {
+        height: fit-content;
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 0 60px;
+
+        .sentMessage {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          gap: 10px;
+          height: fit-content;
+          width: 100%;
+
+          .date {
+            display: flex;
+            align-items: center;
+            align-self: center;
+            padding: 5px;
+            border-radius: 8px;
+            background-color: white;
+            font-size: 14px;
+            width: max-content;
+
+            &:first-child {
+              margin-top: 20px;
+            }
+          }
+
+          .messageContainer {
+            display: flex;
+            gap: 5px;
+            height: fit-content;
+            width: fit-content;
+            max-width: 60%;
+            background-color: var(--color-secondary);
+            padding: 7px 10px;
+            border-radius: 8px;
+            position: relative;
+
+            .icons {
+              display: none;
+            }
+
+            .arrowIcon {
+              position: absolute;
+              top: 4px;
+              right: 8px;
+              font-size: 16px;
+              rotate: 90deg;
+              display: none;
+              color: var(--color-icon-secondary);
+            }
+
+            .seen {
+              margin-left: 5px;
+
+              .MuiSvgIcon-root {
+                margin-bottom: -5px;
+                font-size: 20px;
+                color: rgb(83, 189, 235);
+              }
+            }
+
+            .messageContent {
+              display: flex;
+              flex-direction: column;
+
+              img {
+                max-height: 340px;
+                max-width: 340px;
+              }
+
+              .singleDocument {
+              }
+
+              .content {
+                color: black;
+                width: fit-content;
+              }
+            }
+
+            .timestamp {
+              color: gray;
+              font-size: 11px;
+              margin-top: auto;
+              margin-bottom: -5px;
+              margin-left: auto;
+              white-space: nowrap;
+            }
+
+            .OptionsBtns {
+              position: absolute !important;
+              top: 0;
+              right: 20px;
+              z-index: 2;
+              border: 1px solid red;
+            }
+          }
+
+          &:hover {
+            .arrowIcon {
+              display: block;
+              height: 20px;
+              width: 20px;
+              border-radius: 50%;
+              background-color: var(--color-secondary);
+            }
+
+            .icons {
+              position: absolute;
+              right: 100%;
+              top: 50%;
+              transform: translateY(-50%) scaleX(-1);
+              display: flex;
+              gap: 5px;
+              margin-right: 5px;
+
+              .MuiSvgIcon-root {
+                color: white;
+                background-color: var(--color-icon-secondary);
+                border-radius: 50%;
+              }
+            }
+          }
+        }
+
+        .receivedMessage {
+          @extend .sentMessage;
+          align-items: flex-start;
+
+          .messageContainer {
+            background-color: white;
+
+            .time {
+              color: gray;
+              margin-top: auto;
+              margin-bottom: -5px;
+              margin-right: auto;
+            }
+          }
+
+          &:hover {
+            .arrowIcon {
+              background-color: white;
+            }
+
+            .icons {
+              left: 100%;
+              transform: translateY(-50%);
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+
+      &::-webkit-scrollbar {
+        width: 8px;
+        margin-right: 150px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--color-scroll-bar);
+        border-radius: 5px;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .userInputs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 60px;
+    padding: 10px 16px 10px 8px;
+    position: sticky;
+    bottom: 0;
+    right: 0;
+    background-color: var(--color-primary);
+    z-index: 1;
+
+    .icons {
+      display: flex;
+      gap: 5px;
+      position: relative;
+
+      .emojiIcon {
+        font-size: 28px;
+      }
+
+      .attachIcon {
+        transform: scaleX(-1);
+        rotate: 45deg;
+      }
+
+      .attachBtns {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: absolute;
+        bottom: calc(100% + 20px);
+        left: 50%;
+
+        button {
+          border: none;
+          outline: none;
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+          background: linear-gradient(0deg, #0eabf4 50%, #0795dc 50%);
+          cursor: pointer;
+        }
+
+        form {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+          overflow: hidden;
+        }
+
+        .documentBtn {
+          background: linear-gradient(0deg, #ec407a 50%, #d3396d 50%);
+        }
+
+        .photoVideoBtn {
+          background: linear-gradient(0deg, #bf59cf 50%, #ac44cf 50%);
+        }
+
+        .MuiSvgIcon-root {
+          color: white;
+          font-size: 30px;
+        }
+      }
+    }
+
+    .messageForm {
+      display: flex;
+      flex: 1;
+
+      input {
+        flex: 1;
+        height: 40px;
+        border-radius: 8px;
+        padding: 0 20px;
+        outline: none;
+        border: none;
+        font-size: 16px;
+
+        &::placeholder {
+          font-family: 'Helvetica', 'Poppins', sans-serif;
+          font-size: 16px;
+        }
+      }
+
+      button {
+        display: none;
+      }
+    }
+
+    .micIcon {
+      font-size: 28px;
+    }
+  }
+
+  .docPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    // gap: 40px;
+    width: 100%;
+    padding: 30px;
+
+    .closeIcon {
+      align-self: flex-start;
+      color: var(--color-icon-primnary);
+    }
+
+    .doc {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      width: 80%;
+      border: none;
+
+      .photosVideos {
+        height: auto;
+        max-height: 400px;
+        max-width: 400px;
+      }
+
+      .file {
+        height: 200px;
+        width: auto;
+      }
+
+      .messageDiv {
+        width: 100%;
+        height: 40px;
+        position: relative;
+
+        .messageInput {
+          width: 100%;
+          height: 100%;
+          border-radius: 8px;
+          padding: 0 20px;
+          outline: none;
+          border: none;
+          font-size: 16px;
+
+          &::placeholder {
+            font-family: 'Helvetica', 'Poppins', sans-serif;
+            font-size: 16px;
+          }
+        }
+
+        .MuiButtonBase-root {
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          transform: translateY(-50%);
+
+          .MuiSvgIcon-root {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+    .docForm {
+      width: 100%;
+
+      .attachField {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        position: relative;
+        border: none;
+
+        .photosBlocks {
+          display: flex;
+          gap: 10px;
+
+          .unselected {
+            height: 50px;
+            width: 50px;
+            cursor: pointer;
+          }
+
+          .selected {
+            @extend .unselected;
+            border: 2px solid var(--color-green);
+            border-radius: 4px;
+          }
+        }
+
+        .documentBtn,
+        .photoVideoBtn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 50px;
+          width: 50px;
+          border: 1px solid var(--color-icon-secondary);
+          border-radius: 4px;
+
+          .MuiSvgIcon-root {
+            font-size: 20px;
+            color: var(--color-icon-primnary);
+          }
+        }
+
+        .sendMessageBtn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          right: 30px;
+          border: none;
+          outline: none;
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+          background-color: var(--color-green);
+          cursor: pointer;
+
+          .sendMessageIcon {
+            transform: rotate(90deg);
+            color: white;
+            height: inherit;
+            width: inherit;
+            padding: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .preChatePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    gap: 20px;
+
+    img {
+      height: 240px;
+      width: 360px;
+    }
+
+    h2,
+    p,
+    .MuiSvgIcon-root {
+      color: var(--color-text-secondary);
+    }
+
+    h2 {
+      font-weight: normal;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    footer {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      position: fixed;
+      bottom: 40px;
+
+      .MuiSvgIcon-root {
+        height: 13px;
+        width: 13px;
+      }
+    }
+  }
+}

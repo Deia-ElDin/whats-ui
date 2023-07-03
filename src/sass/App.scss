@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import './signin';
+@import './sidebar';
+@import './chat';
+@import './infos';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #f0f2f5;
+  --color-secondary: rgb(217, 235, 211);
+  --color-green: #00a884;
+  --color-icon-primnary: #54656f;
+  --color-icon-secondary: #8696a0;
+  --color-text-primary: black;
+  --color-text-secondary: #667781;
+  --color-scroll-bar: #ced0d1;
+  --padding-left: 12px;
+}
+
+body {
+  font-family: 'Helvetica', 'Poppins', sans-serif;
+  overflow: hidden;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.App {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background-color: var(--color-primary);
+}
+
+.whatsApp {
+  display: flex;
+  height: inherit;
+  width: inherit;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .MuiSvgIcon-root {
+    font-size: 24px;
+    color: var(--color-icon-primnary);
+  }
+}
+
+.MuiSvgIcon-root {
+  cursor: pointer;
+}
+
+.loading {
+  height: 80%;
+}
+
+.errMsg {
+  width: 100%;
+  text-align: center;
+  color: red;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.OptionsBtns {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  width: 200px;
+  border-radius: 8px;
+  background-color: white;
+
+  button {
+    height: 40px;
+    width: 100%;
+    color: black;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    background-color: white;
+    text-align: left;
+    padding-left: 30px;
+
+    &:hover {
+      background-color: var(--color-primary);
+    }
+  }
+}
+
+.attachContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+  width: inherit;
+  position: relative;
+
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    font-size: 0;
+    height: inherit;
+    width: inherit;
+    cursor: pointer;
+
+    &::-webkit-file-upload-button {
+      cursor: pointer;
+      display: none;
+    }
+  }
+}

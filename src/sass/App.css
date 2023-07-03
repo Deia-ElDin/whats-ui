@@ -1,0 +1,875 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.signin {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 340px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 20px 10px;
+  box-shadow: 5px 5px 10px 2px rgba(0, 168, 132, 0.7);
+  background-color: white;
+}
+.signin .signInBtns {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.signin .signInBtns .btnDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+  max-width: 360px;
+  border-radius: 8px;
+  background-color: var(--color-green);
+  padding: 20px 10px;
+}
+.signin .signInBtns .btnDiv button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.signin .signInBtns .btnDiv img {
+  height: 30px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  background-color: white;
+  border-radius: 4px;
+}
+.signin .signInBtns .phone {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.signin .signInBtns .phone .phoneForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.signin .signInBtns .phone .phoneForm input {
+  height: 30px;
+  border-radius: 8px;
+  padding-left: 20px;
+  border: 1px solid var(--color-secondary);
+  outline: none;
+  font-size: 17px;
+  font-weight: bold;
+}
+.signin .signInBtns .phone .phoneForm .controls {
+  display: flex;
+  justify-content: space-between;
+}
+.signin .signInBtns .phone .phoneForm .controls button {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  outline: none;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.signin .signInBtns .phone .phoneForm .controls .cancelBtn {
+  background-color: white;
+  color: red;
+  border: 1px solid red;
+}
+.signin .signInBtns .phone .phoneForm .controls .otpBtn {
+  background-color: var(--color-secondary);
+  color: white;
+  border: none;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+.sidebar .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-right: 1px solid lightgray;
+  padding: 10px 16px 10px 8px;
+  height: 60px;
+}
+.sidebar .header .headerIcons {
+  display: flex;
+  justify-content: space-between;
+  width: 140px;
+}
+.sidebar .search {
+  height: 50px;
+  padding: 0 4px 0 12px;
+  background-color: white !important;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid var(--color-primary);
+}
+.sidebar .search .MuiSvgIcon-root {
+  font-size: 20px;
+  color: var(--color-icon-secondary);
+}
+.sidebar .search .searchForm {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 7%;
+  background-color: var(--color-primary);
+  border-radius: 8px;
+  height: 35px;
+  max-height: 35px;
+  padding: 0 9px;
+}
+.sidebar .search .searchForm input {
+  border: none;
+  outline: none;
+  flex: 1;
+  height: 35px;
+  max-height: 35px;
+  background-color: var(--color-primary);
+  border-radius: 8px;
+  font-size: 14px;
+}
+.sidebar .search .searchForm input::-moz-placeholder {
+  font-family: "Helvetica", "Poppins", sans-serif;
+}
+.sidebar .search .searchForm input:-ms-input-placeholder {
+  font-family: "Helvetica", "Poppins", sans-serif;
+}
+.sidebar .search .searchForm input::placeholder {
+  font-family: "Helvetica", "Poppins", sans-serif;
+}
+.sidebar .search .searchForm .search-btn {
+  display: none;
+}
+.sidebar .search .MuiSvgIcon-root {
+  color: var(--color-icon-primnary);
+}
+.sidebar .chatRooms {
+  flex: 1;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: white;
+}
+.sidebar .chatRooms .room {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  width: 100%;
+  padding: 14px;
+  border-bottom: 1px solid var(--color-primary);
+  cursor: pointer;
+}
+.sidebar .chatRooms .room .leftRoomDiv {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.sidebar .chatRooms .room .leftRoomDiv .avatar {
+  height: 49px;
+  width: 49px;
+}
+.sidebar .chatRooms .room .leftRoomDiv .info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.sidebar .chatRooms .room .leftRoomDiv .info .name {
+  font-size: 16px;
+  font-weight: normal;
+}
+.sidebar .chatRooms .room .leftRoomDiv .info .lastMessage {
+  color: var(--color-text-secondary);
+  font-size: 14px;
+}
+.sidebar .chatRooms .room .rightRoomDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+.sidebar .chatRooms .room .rightRoomDiv .lastMessageDate {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+.sidebar .chatRooms .room .rightRoomDiv .icons {
+  display: flex;
+  gap: 10px;
+}
+.sidebar .chatRooms .room .rightRoomDiv .icons .arrowIcon {
+  rotate: 90deg;
+  display: none;
+}
+.sidebar .chatRooms .room .rightRoomDiv .icons .MuiSvgIcon-root {
+  font-size: 20px;
+  color: var(--color-icon-secondary);
+}
+.sidebar .chatRooms .room:hover {
+  background-color: var(--color-primary);
+}
+.sidebar .chatRooms .room:hover .rightRoomDiv .icons .arrowIcon {
+  display: block;
+}
+.sidebar .chatRooms::-webkit-scrollbar {
+  width: 8px;
+}
+.sidebar .chatRooms::-webkit-scrollbar-thumb {
+  background-color: var(--color-scroll-bar);
+  border-radius: 5px;
+}
+.sidebar .searchResult {
+  flex: 1;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: white;
+}
+.sidebar .searchResult .result .listName {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: var(--color-green);
+  padding-left: 40px;
+  border-bottom: 1px solid var(--color-primary);
+  cursor: default;
+}
+.sidebar .searchResult .result ul {
+  list-style-type: none;
+}
+.sidebar .searchResult .result ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid var(--color-primary);
+  cursor: pointer;
+}
+.sidebar .searchResult .result ul li .buttons {
+  display: flex;
+  justify-content: space-around;
+  width: inherit;
+  height: 25px;
+}
+.sidebar .searchResult .result ul li .buttons button {
+  border: none;
+  background-color: var(--color-green);
+  color: white;
+  border-radius: 8px;
+  padding: 0 20px;
+  cursor: pointer;
+}
+.sidebar .searchResult .result ul li .buttons button:active {
+  border: 1px solid var(--color-green);
+  background-color: white;
+  color: black;
+}
+.sidebar .searchResult .result ul li:hover {
+  background-color: var(--color-primary);
+}
+.sidebar .searchResult::-webkit-scrollbar {
+  width: 8px;
+}
+.sidebar .searchResult::-webkit-scrollbar-thumb {
+  background-color: var(--color-scroll-bar);
+  border-radius: 5px;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+}
+.chat .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  padding: 14px;
+  border-bottom: 1px solid var(--color-primary);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  right: 0;
+  background-color: var(--color-primary);
+  z-index: 1;
+  cursor: pointer;
+}
+.chat .header .leftHeaderDiv {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.chat .header .leftHeaderDiv .avatar {
+  height: 40px;
+  width: 40px;
+}
+.chat .header .leftHeaderDiv .info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.chat .header .leftHeaderDiv .info .name {
+  font-size: 16px;
+  font-weight: normal;
+}
+.chat .header .leftHeaderDiv .info .text {
+  color: var(--color-text-secondary);
+  font-size: 12px;
+}
+.chat .header .rightHeaderDiv {
+  display: flex;
+  gap: 5px;
+}
+.chat .body {
+  position: relative;
+  height: 100%;
+  overflow-y: scroll;
+  background-image: url("../../public/assets/chat-bgc.png");
+  background-size: 300px;
+  background-repeat: repeat;
+}
+.chat .body .styles_scrollable-div__prSCv .message {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 0 60px;
+}
+.chat .body .styles_scrollable-div__prSCv .message .sentMessage, .chat .body .styles_scrollable-div__prSCv .message .receivedMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+}
+.chat .body .styles_scrollable-div__prSCv .message .sentMessage .date, .chat .body .styles_scrollable-div__prSCv .message .receivedMessage .date {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: white;
+  font-size: 14px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.chat .body .styles_scrollable-div__prSCv .message .sentMessage .date:first-child, .chat .body .styles_scrollable-div__prSCv .message .receivedMessage .date:first-child {
+  margin-top: 20px;
+}
+.chat .body .styles_scrollable-div__prSCv .message .sentMessage .messageContainer, .chat .body .styles_scrollable-div__prSCv .message .receivedMessage .messageContainer {
+  display: flex;
+  gap: 5px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 60%;
+  background-color: var(--color-secondary);
+  padding: 7px 10px;
+  border-radius: 8px;
+  position: relative;
+}
+.chat .body .styles_scrollable-div__prSCv .message .sentMessage .messageContainer .icons, .chat .body .styles_scrollable-div__prSCv .message .receivedMessage .messageContainer .icons {
+  display: none;
+}
+.chat .body .styles_scrollable-div__prSCv .message .sentMessage .messageContainer .arrowIcon, .chat .body .styles_scrollable-div__prSCv .message .receivedMessage .messageContainer .arrowIcon {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  font-size: 16px;
+  rotate: 90deg;
+  display: none;
+  color: var(--color-icon-secondary);
+}
+.chat .body .styles_scrollable-div__prSCv .message .sentMessage .messageContainer .seen, .chat .body .styles_scrollable-div__prSCv .message .receivedMessage .messageContainer .seen {
+  margin-left: 5px;
+}
+.chat .body .styles_scrollable-div__prSCv .message .sentMessage .messageContainer .seen .MuiSvgIcon-root, .chat .body .styles_scrollable-div__prSCv .message .receivedMessage .messageContainer .seen .MuiSvgIcon-root {
+  margin-bottom: -5px;
+  font-size: 20px;
+  color: rgb(83, 189, 235);
+}
+.chat .body .styles_scrollable-div__prSCv .message .sentMessage .messageContainer .messageContent, .chat .body .styles_scrollable-div__prSCv .message .receivedMessage .messageContainer .messageContent {
+  display: flex;
+  flex-direction: column;
+}
+.chat .body .styles_scrollable-div__prSCv .message .sentMessage .messageContainer .messageContent img, .chat .body .styles_scrollable-div__prSCv .message .receivedMessage .messageContainer .messageContent img {
+  max-height: 340px;
+  max-width: 340px;
+}
+.chat .body .styles_scrollable-div__prSCv .message .sentMessage .messageContainer .messageContent .content, .chat .body .styles_scrollable-div__prSCv .message .receivedMessage .messageContainer .messageContent .content {
+  color: black;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.chat .body .styles_scrollable-div__prSCv .message .sentMessage .messageContainer .timestamp, .chat .body .styles_scrollable-div__prSCv .message .receivedMessage .messageContainer .timestamp {
+  color: gray;
+  font-size: 11px;
+  margin-top: auto;
+  margin-bottom: -5px;
+  margin-left: auto;
+  white-space: nowrap;
+}
+.chat .body .styles_scrollable-div__prSCv .message .sentMessage .messageContainer .OptionsBtns, .chat .body .styles_scrollable-div__prSCv .message .receivedMessage .messageContainer .OptionsBtns {
+  position: absolute !important;
+  top: 0;
+  right: 20px;
+  z-index: 2;
+  border: 1px solid red;
+}
+.chat .body .styles_scrollable-div__prSCv .message .sentMessage:hover .arrowIcon, .chat .body .styles_scrollable-div__prSCv .message .receivedMessage:hover .arrowIcon {
+  display: block;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+}
+.chat .body .styles_scrollable-div__prSCv .message .sentMessage:hover .icons, .chat .body .styles_scrollable-div__prSCv .message .receivedMessage:hover .icons {
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%) scaleX(-1);
+  display: flex;
+  gap: 5px;
+  margin-right: 5px;
+}
+.chat .body .styles_scrollable-div__prSCv .message .sentMessage:hover .icons .MuiSvgIcon-root, .chat .body .styles_scrollable-div__prSCv .message .receivedMessage:hover .icons .MuiSvgIcon-root {
+  color: white;
+  background-color: var(--color-icon-secondary);
+  border-radius: 50%;
+}
+.chat .body .styles_scrollable-div__prSCv .message .receivedMessage {
+  align-items: flex-start;
+}
+.chat .body .styles_scrollable-div__prSCv .message .receivedMessage .messageContainer {
+  background-color: white;
+}
+.chat .body .styles_scrollable-div__prSCv .message .receivedMessage .messageContainer .time {
+  color: gray;
+  margin-top: auto;
+  margin-bottom: -5px;
+  margin-right: auto;
+}
+.chat .body .styles_scrollable-div__prSCv .message .receivedMessage:hover .arrowIcon {
+  background-color: white;
+}
+.chat .body .styles_scrollable-div__prSCv .message .receivedMessage:hover .icons {
+  left: 100%;
+  transform: translateY(-50%);
+  margin-left: 5px;
+}
+.chat .body .styles_scrollable-div__prSCv::-webkit-scrollbar {
+  width: 8px;
+  margin-right: 150px;
+}
+.chat .body .styles_scrollable-div__prSCv::-webkit-scrollbar-thumb {
+  background-color: var(--color-scroll-bar);
+  border-radius: 5px;
+}
+.chat .body::-webkit-scrollbar {
+  display: none;
+}
+.chat .userInputs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 60px;
+  padding: 10px 16px 10px 8px;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  right: 0;
+  background-color: var(--color-primary);
+  z-index: 1;
+}
+.chat .userInputs .icons {
+  display: flex;
+  gap: 5px;
+  position: relative;
+}
+.chat .userInputs .icons .emojiIcon {
+  font-size: 28px;
+}
+.chat .userInputs .icons .attachIcon {
+  transform: scaleX(-1);
+  rotate: 45deg;
+}
+.chat .userInputs .icons .attachBtns {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  bottom: calc(100% + 20px);
+  left: 50%;
+}
+.chat .userInputs .icons .attachBtns button {
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: linear-gradient(0deg, #0eabf4 50%, #0795dc 50%);
+  cursor: pointer;
+}
+.chat .userInputs .icons .attachBtns form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.chat .userInputs .icons .attachBtns .documentBtn {
+  background: linear-gradient(0deg, #ec407a 50%, #d3396d 50%);
+}
+.chat .userInputs .icons .attachBtns .photoVideoBtn {
+  background: linear-gradient(0deg, #bf59cf 50%, #ac44cf 50%);
+}
+.chat .userInputs .icons .attachBtns .MuiSvgIcon-root {
+  color: white;
+  font-size: 30px;
+}
+.chat .userInputs .messageForm {
+  display: flex;
+  flex: 1;
+}
+.chat .userInputs .messageForm input {
+  flex: 1;
+  height: 40px;
+  border-radius: 8px;
+  padding: 0 20px;
+  outline: none;
+  border: none;
+  font-size: 16px;
+}
+.chat .userInputs .messageForm input::-moz-placeholder {
+  font-family: "Helvetica", "Poppins", sans-serif;
+  font-size: 16px;
+}
+.chat .userInputs .messageForm input:-ms-input-placeholder {
+  font-family: "Helvetica", "Poppins", sans-serif;
+  font-size: 16px;
+}
+.chat .userInputs .messageForm input::placeholder {
+  font-family: "Helvetica", "Poppins", sans-serif;
+  font-size: 16px;
+}
+.chat .userInputs .messageForm button {
+  display: none;
+}
+.chat .userInputs .micIcon {
+  font-size: 28px;
+}
+.chat .docPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+  padding: 30px;
+}
+.chat .docPage .closeIcon {
+  align-self: flex-start;
+  color: var(--color-icon-primnary);
+}
+.chat .docPage .doc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 80%;
+  border: none;
+}
+.chat .docPage .doc .photosVideos {
+  height: auto;
+  max-height: 400px;
+  max-width: 400px;
+}
+.chat .docPage .doc .file {
+  height: 200px;
+  width: auto;
+}
+.chat .docPage .doc .messageDiv {
+  width: 100%;
+  height: 40px;
+  position: relative;
+}
+.chat .docPage .doc .messageDiv .messageInput {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  padding: 0 20px;
+  outline: none;
+  border: none;
+  font-size: 16px;
+}
+.chat .docPage .doc .messageDiv .messageInput::-moz-placeholder {
+  font-family: "Helvetica", "Poppins", sans-serif;
+  font-size: 16px;
+}
+.chat .docPage .doc .messageDiv .messageInput:-ms-input-placeholder {
+  font-family: "Helvetica", "Poppins", sans-serif;
+  font-size: 16px;
+}
+.chat .docPage .doc .messageDiv .messageInput::placeholder {
+  font-family: "Helvetica", "Poppins", sans-serif;
+  font-size: 16px;
+}
+.chat .docPage .doc .messageDiv .MuiButtonBase-root {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+.chat .docPage .doc .messageDiv .MuiButtonBase-root .MuiSvgIcon-root {
+  font-size: 20px;
+}
+.chat .docPage .docForm {
+  width: 100%;
+}
+.chat .docPage .docForm .attachField {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  position: relative;
+  border: none;
+}
+.chat .docPage .docForm .attachField .photosBlocks {
+  display: flex;
+  gap: 10px;
+}
+.chat .docPage .docForm .attachField .photosBlocks .unselected, .chat .docPage .docForm .attachField .photosBlocks .selected {
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+.chat .docPage .docForm .attachField .photosBlocks .selected {
+  border: 2px solid var(--color-green);
+  border-radius: 4px;
+}
+.chat .docPage .docForm .attachField .documentBtn,
+.chat .docPage .docForm .attachField .photoVideoBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  border: 1px solid var(--color-icon-secondary);
+  border-radius: 4px;
+}
+.chat .docPage .docForm .attachField .documentBtn .MuiSvgIcon-root,
+.chat .docPage .docForm .attachField .photoVideoBtn .MuiSvgIcon-root {
+  font-size: 20px;
+  color: var(--color-icon-primnary);
+}
+.chat .docPage .docForm .attachField .sendMessageBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 30px;
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: var(--color-green);
+  cursor: pointer;
+}
+.chat .docPage .docForm .attachField .sendMessageBtn .sendMessageIcon {
+  transform: rotate(90deg);
+  color: white;
+  height: inherit;
+  width: inherit;
+  padding: 10px;
+}
+.chat .preChatePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 20px;
+}
+.chat .preChatePage img {
+  height: 240px;
+  width: 360px;
+}
+.chat .preChatePage h2,
+.chat .preChatePage p,
+.chat .preChatePage .MuiSvgIcon-root {
+  color: var(--color-text-secondary);
+}
+.chat .preChatePage h2 {
+  font-weight: normal;
+}
+.chat .preChatePage p {
+  font-size: 14px;
+}
+.chat .preChatePage footer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: fixed;
+  bottom: 40px;
+}
+.chat .preChatePage footer .MuiSvgIcon-root {
+  height: 13px;
+  width: 13px;
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+.infos .header {
+  border-left: 1px solid lightgray;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #f0f2f5;
+  --color-secondary: rgb(217, 235, 211);
+  --color-green: #00a884;
+  --color-icon-primnary: #54656f;
+  --color-icon-secondary: #8696a0;
+  --color-text-primary: black;
+  --color-text-secondary: #667781;
+  --color-scroll-bar: #ced0d1;
+  --padding-left: 12px;
+}
+
+body {
+  font-family: "Helvetica", "Poppins", sans-serif;
+  overflow: hidden;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.App {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  background-color: var(--color-primary);
+}
+
+.whatsApp {
+  display: flex;
+  height: inherit;
+  width: inherit;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon .MuiSvgIcon-root {
+  font-size: 24px;
+  color: var(--color-icon-primnary);
+}
+
+.MuiSvgIcon-root {
+  cursor: pointer;
+}
+
+.loading {
+  height: 80%;
+}
+
+.errMsg {
+  width: 100%;
+  text-align: center;
+  color: red;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.OptionsBtns {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  width: 200px;
+  border-radius: 8px;
+  background-color: white;
+}
+.OptionsBtns button {
+  height: 40px;
+  width: 100%;
+  color: black;
+  font-size: 15px;
+  border: none;
+  outline: none;
+  background-color: white;
+  text-align: left;
+  padding-left: 30px;
+}
+.OptionsBtns button:hover {
+  background-color: var(--color-primary);
+}
+
+.attachContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+  width: inherit;
+  position: relative;
+}
+.attachContainer input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  font-size: 0;
+  height: inherit;
+  width: inherit;
+  cursor: pointer;
+}
+.attachContainer input::-webkit-file-upload-button {
+  cursor: pointer;
+  display: none;
+}/*# sourceMappingURL=App.css.map */

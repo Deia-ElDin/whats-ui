@@ -1,0 +1,9 @@
+.infos {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+
+  .header {
+    border-left: 1px solid lightgray;
+  }
+}
